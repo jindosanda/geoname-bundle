@@ -3,7 +3,7 @@
     "type": "symfony-bundle",
     "description": "Symfony GeoNameBundle",
     "keywords": ["geoname", "geonameid"],
-    "homepage": "https://github.com/bordeux/geoname-bundle",
+    "homepage": "https://github.com/jindosanda/geoname-bundle",
     "license": "MIT",
     "authors": [
         {
