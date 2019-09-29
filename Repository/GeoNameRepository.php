@@ -10,4 +10,23 @@ namespace Bordeux\Bundle\GeoNameBundle\Repository;
  */
 class GeoNameRepository extends \Doctrine\ORM\EntityRepository
 {
+	public static function italianRegionsQueryBuilder(GeoNameRepository $r): QueryBuilder
+	{
+	    return $r->createQueryBuilder('e')
+	       ->where('e.country = :country_id')
+	       ->setParameter('country_id', 3175395)
+	       ->andWhere('e.featureCode = :region_code')
+	       ->setParameter('region_code', 'ADM1')
+	       ->orderBy('e.name', 'ASC');
+	 }
+
+	public static function italianCitiesQueryBuilder(GeoNameRepository $r): QueryBuilder
+	{
+	    return $r->createQueryBuilder('e')
+	       ->where('e.country = :country_id')
+	       ->setParameter('country_id', 3175395)
+	       ->andWhere('e.featureCode = :city_code')
+	       ->setParameter('city_code', 'ADM2')
+	       ->orderBy('e.name', 'ASC');
+	 }
 }

@@ -10,4 +10,11 @@ namespace Bordeux\Bundle\GeoNameBundle\Repository;
  */
 class CountryRepository extends \Doctrine\ORM\EntityRepository
 {
+	public static function italyCountryQueryBuilder(CountryRepository $r): QueryBuilder
+	{
+	    return $r->createQueryBuilder('e')
+	       ->where('e.id = :country_id')
+	       ->setParameter('country_id', 3175395)
+	       ->orderBy('e.name', 'DESC');
+	 }
 }

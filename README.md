@@ -38,12 +38,21 @@ covered worldwide.
 
 # Installation
 
-1. Install the bundle using composer:
+1. Install the bundle adding vcs repository and require in composer.json:
 
-    ```sh
-    composer require jindosanda/geoname-bundle
+    ```php
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/jindosanda/geoname-bundle"
+        }
+    ],
+
+    "require": {
+            [...]
+            "jindosanda/geoname-bundle": "dev-master",
     ```
-
+    then run composer update
 
 2. Add the bundle to your `AppKernel.php`
 
